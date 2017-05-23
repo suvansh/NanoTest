@@ -1,0 +1,24 @@
+﻿@{ 
+    ViewData["Title"] = "Welcome";
+}
+
+<h2>Welcome</h2>
+
+<ul>
+    @for (int i = 0; i < (int)ViewData["NumTimes"]; i++)
+    {
+        <li>@ViewData["Message"]</li>
+    }
+</ul>
+
+<script src="https://cdn.ckeditor.com/4.5.9/standard/ckeditor.js"></script>
+<script src="http://ckeditor-spellcheck.nanospell.com/nanospell/autoload.js"></script>
+<textarea id='editor1'>Insert text</textarea>
+<script>CKEDITOR.replace( 'editor1');</script>
+
+<script>
+ nanospell.ckeditor('editor1',{
+    dictionary : "en",  // 24 free international dictionaries
+    server : "asp.net"      // can be php, asp, asp.net or java
+ });
+</script>
